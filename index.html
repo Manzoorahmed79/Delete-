@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astro</title>
+    <!-- favicon for the website tab -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- the page style sheet file -->
+    <link rel="stylesheet" href="css/Homepage.css">
+    <!-- main styling sheet file -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- render all elemnts normally -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- Font Awesone Library -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&amp;display=swap" rel="stylesheet">
+    <style>
+        /* Order Form Styles */
+        .popup {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+        }
+        .popup input, .popup select {
+            margin: 10px 0;
+            padding: 5px;
+            width: calc(100% - 20px);
+            box-sizing: border-box;
+        }
+        .popup button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .popup button:hover {
+            background-color: #45a049;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none; /* Hidden by default */
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <!-- header start -->
+    <header>
+        <div class="container">
+            <img src="images/logo.png" alt="">
+            <nav>
+                <div class="burger-bar">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="Services.html">SERVICES</a></li>
+                    <li><a href="pricing.html">PRICING</a></li>
+                    <li><a href="Domain.html">DOMAIN</a></li>
+                    <li><a href="About-Us.html">ABOUT</a></li>
+                    <li><a href="Blog.html">BLOG</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+                <div class="search">
+                    <input type="search" placeholder="Search" name="Search">
+                    <i class="fas fa-search"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- header end -->
+
+    <!-- landing start -->
+    <div class="landing">
+        <div class="container">
+            <div class="info">
+                <div class="contact">
+                    <p class="phone">
+                        <i class="fas fa-phone-volume"></i>
+                        Call Us: (0) 123 456 789
+                    </p>
+                    <p class="email">
+                        <i class="far fa-envelope"></i>
+                        jetspace@mail.com
+                    </p>
+                </div>
+                <div class="lang">
+                    <select name="Language" id="language">
+                        <option value="EN">EN</option>
+                    </select>
+                </div>
+            </div>
+            <div class="content">
+                <p><span>Super fast </span>servers</p>
+                <p>SAFE,FAST AND AWESOME PRICE</p>
+                <p>Vestibulum ac diam sit amet quam vehicula elementum sed sit
+                amet dui. Vestibulum ac diam sit amet quam vehicula</p>
+                <ul>
+                    <li>Super Special Offer/$2,99/MO</li>
+                    <li>Unlimited Bandwidth and Space</li>
+                    <li>Daily Backups</li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom-image">
+            <img src="images/Clouds-landing.png" alt="">
+            <img src="images/Mid-Cloud.png" alt="">
+            <div class="servers">
+                <img src="images/Left-Server.png" alt="">
+                <img src="images/Mid-Server.png" alt="">
+                <img src="images/Right-Server.png" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- landing end -->
+
+    <!-- Features section start -->
+    <div class="features homepage">
+        <div class="container">
+            <div class="heading">
+                <h3>We have awesome plans and prices</h3>
+                <p>Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec sollicitudin molestie malesuada.
+                Donec sollicitudin molestie malesuada. Pellentesque in ipsum</p>
+            </div>
+            <div class="content">
+                <div class="box">
+                    <img src="images/features-1.png" alt="">
+                    <h4>Fast Servers</h4>
+                    <p>Curabitur aliquet quam id dui posu
+                    ere blandit.Curabitur ae blandit</p>
+                </div>
+                <div class="box">
+                    <img src="images/features-2.png" alt="">
+                    <h4>Fully Support</h4>
+                    <p>Curabitur aliquet quam id dui posu
+                    ere blandit.Curabitur ae blandit</p>
+                </div>
+                <div class="box">
+                    <img src="images/features-3.png" alt="">
+                    <h4>Safe and Secure</h4>
+                    <p>Curabitur aliquet quam id dui posu
+                    ere blandit.Curabitur ae blandit</p>
+                </div>
+            </div>
+            <span class="line-seperator"></span>
+    </div>
+    <!-- Features section end -->
+
+    <!-- Domain Section start -->
+    <div class="domain homepage">
+        <div class="container">
+            <div class="heading">
+                <h3>Check your domain name</h3>
+                <p>Enter the domain name to register or transfer</p>
+            </div>
+            <form action="">
+                <div class="domain-search">
+                    <input type="search" name="domain-name">
+                    <div class="custom-select">
+                        <select name="domain">
+                            <option value="com">.Com</option>
+                            <option value="net">.Net</option>
+                            <option value="org">.Org</option>
+                            <option value="Biz">.Biz</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit" value="Search Domain">
+                </div>
+            </form>
+            <div class="plans">
+                <div class="box">
+                    <div class="price-tag">BASIC <span>9.99</span> <span>/mo</span> </div>
+                    <div class="image">
+                        <img src="images/Clouds.png" alt="">
+                        <img src="images/Server.png" alt="">
+                    </div>
+                    <ul>
+                        <li>10GB Storage</li>
+                        <li>500 Mail Accounts</li>
+                        <li>10 Databases</li>
+                        <li>512MB Rams</li>
+                    </ul>
+                    <a href="#" class="button" onclick="openOrderForm('BASIC', '9.99')">Buy Now</a>
+                </div>
+                <div class="box">
+                    <div class="price-tag">PRO <span>19.99</span> <span>/mo</span></div>
+                    <div class="image">
+                        <img src="images/Clouds.png" alt="">
+                        <img src="images/Server.png" alt="">
+                    </div>
+                    <ul>
+                        <li>20GB Storage</li>
+                        <li>1000 Mail Accounts</li>
+                        <li>20 Databases</li>
+                        <li>1GB Rams</li>
+                    </ul>
+                    <a href="#" class="button" onclick="openOrderForm('PRO', '19.99')">Buy Now</a>
+                </div>
+                <div class="box">
+                    <div class="price-tag">ULTRA <span>49.99</span> <span>/mo</span></div>
+                    <div class="image">
+                        <img src="images/Clouds.png" alt="">
+                        <img src="images/Server.png" alt="">
+                    </div>
+                    <ul>
+                        <li>50GB Storage</li>
+                        <li>2000 Mail Accounts</li>
+                        <li>50 Databases</li>
+                        <li>2GB Rams</li>
+                    </ul>
+                    <a href="#" class="button" onclick="openOrderForm('ULTRA', '49.99')">Buy Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Domain Section end -->
+
+    <!-- Order Form Popup -->
+    <div class="overlay" id="overlay" onclick="closeOrderForm()"></div>
+    <div class="popup" id="order-form">
+        <h3>Order Now</h3>
+        <p>Product: <span id="product-name"></span></p>
+        <p>Price: <span id="product-price"></span></p>
+        <input type="text" id="phone" placeholder="Phone Number" oninput="validateForm()">
+        <input type="text" id="email" placeholder="Email" oninput="validateForm()">
+        <input type="text" id="name" placeholder="Name" oninput="validateForm()">
+        <select id="country" onchange="validateForm()">
+            <option value="Pakistan">Pakistan</option>
+            <option value="Bangladesh">Bangladesh</option>
+            <option value="Afghanistan">Afghanistan</option>
+            <option value="United States">United States</option>
+        </select>
+        <button id="submit-button" onclick="sendOrder()" disabled>Submit</button>
+        <button onclick="closeOrderForm()">Cancel Order</button>
+    </div>
+
+    <script>
+        function openOrderForm(product, price) {
+            document.getElementById('product-name').innerText = product;
+            document.getElementById('product-price').innerText = price;
+            document.getElementById('order-form').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closeOrderForm() {
+            document.getElementById('order-form').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        function validateForm() {
+            var phone = document.getElementById('phone').value;
+            var email = document.getElementById('email').value;
+            var name = document.getElementById('name').value;
+            var country = document.getElementById('country').value;
+
+            var submitButton = document.getElementById('submit-button');
+
+            if (phone && email && name && country) {
+                submitButton.disabled = false;
+            } else {
+                submitButton.disabled = true;
+            }
+        }
+
+        function sendOrder() {
+            var productName = document.getElementById('product-name').innerText;
+            var price = document.getElementById('product-price').innerText;
+            var phone = document.getElementById('phone').value;
+            var email = document.getElementById('email').value;
+            var name = document.getElementById('name').value;
+            var country = document.getElementById('country').value;
+
+            var message = "Product: " + productName + "\nPrice: " + price + "\nPhone: " + phone + "\nEmail: " + email + "\nName: " + name + "\nCountry: " + country;
+            var encodedMessage = encodeURIComponent(message);
+
+            var url = "https://api.whatsapp.com/send?phone=+447922640523&text=" + encodedMessage;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>

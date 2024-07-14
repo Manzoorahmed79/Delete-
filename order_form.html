@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .popup {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        .popup input, .popup select {
+            margin: 10px 0;
+            padding: 5px;
+            width: calc(100% - 20px);
+            box-sizing: border-box;
+        }
+        .popup button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .popup button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup">
+        <h3>Order Now</h3>
+        <p>Product: <span id="product-name"></span></p>
+        <p>Price: <span id="product-price"></span></p>
+        <input type="text" id="phone" placeholder="Phone Number" oninput="validateForm()">
+        <input type="text" id="email" placeholder="Email" oninput="validateForm()">
+        <input type="text" id="name" placeholder="Name" oninput="validateForm()">
+        <select id="country" onchange="validateForm()">
+            <option value="Pakistan">Pakistan</option>
+            <option value="Bangladesh">Bangladesh</option>
+            <option value="Afghanistan">Afghanistan</option>
+            <option value="United States">United States</option>
+        </select>
+        <button id="submit-button" onclick="sendOrder()" disabled>Submit</button>
+        <button onclick="window.close()">Cancel Order</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productName = urlParams.get('product');
+            const price = urlParams.get('price');
+            document.getElementById('product-name').innerText = productName;
+            document.getElementById('product-price').innerText = price;
+            validateForm(); // Ensure form is validated when page is loaded
+        });
+
+        function validateForm() {
+            var phone = document.getElementById('phone').value;
+            var email = document.getElementById('email').value;
+            var name = document.getElementById('name').value;
+            var country = document.getElementById('country').value;
+
+            var submitButton = document.getElementById('submit-button');
+
+            // Enable submit button only if all fields are filled
+            if (phone && email && name && country) {
+                submitButton.disabled = false;
+            } else {
+                submitButton.disabled = true;
+            }
+        }
+
+        function sendOrder() {
+            var productName = document.getElementById('product-name').innerText;
+            var price = document.getElementById('product-price').innerText;
+            var phone = document.getElementById('phone').value;
+            var email = document.getElementById('email').value;
+            var name = document.getElementById('name').value;
+            var country = document.getElementById('country').value;
+
+            // Formulate message
+            var message = "Product: " + productName + "\nPrice: " + price + "\nPhone: " + phone + "\nEmail: " + email + "\nName: " + name + "\nCountry: " + country;
+
+            // Encode the message
+            var encodedMessage = encodeURIComponent(message);
+
+            // Send message via WhatsApp
+            var url = "https://api.whatsapp.com/send?phone=+447922640523&text=" + encodedMessage;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
